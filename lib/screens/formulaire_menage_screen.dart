@@ -93,6 +93,7 @@ class _FormulaireMenageScreenState extends State<FormulaireMenageScreen> {
         ),
       ),
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.all(16),
         child: Form(
           key: _formKey,
@@ -335,6 +336,8 @@ class _FormulaireMenageScreenState extends State<FormulaireMenageScreen> {
 
   Widget _champDropdownCommune() {
     return DropdownButtonFormField<String>(
+      isExpanded: true,
+      menuMaxHeight: 300,
       initialValue: _communeSelectionnee,
       decoration: InputDecoration(
         hintText: 'Sélectionner',

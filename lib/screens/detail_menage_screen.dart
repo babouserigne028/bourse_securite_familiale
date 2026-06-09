@@ -91,6 +91,7 @@ class DetailMenageScreen extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
             // Section profil — dégradé vert subtil comme Stitch

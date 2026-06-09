@@ -12,6 +12,7 @@ class AProposScreen extends StatelessWidget {
             style: TextStyle(fontWeight: FontWeight.bold)),
       ),
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.fromLTRB(16, 24, 16, 32),
         child: Column(
           children: [
