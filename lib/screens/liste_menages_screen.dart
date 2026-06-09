@@ -28,11 +28,22 @@ class _ListeMenagesScreenState extends State<ListeMenagesScreen> {
     super.dispose();
   }
 
+  // Normalise une chaîne : minuscules + suppression des accents
+  String _normaliser(String s) {
+    return s.toLowerCase()
+        .replaceAll(RegExp(r'[éèêë]'), 'e')
+        .replaceAll(RegExp(r'[àâ]'), 'a')
+        .replaceAll(RegExp(r'[ùû]'), 'u')
+        .replaceAll(RegExp(r'[îï]'), 'i')
+        .replaceAll(RegExp(r'[ôö]'), 'o')
+        .replaceAll('ç', 'c');
+  }
+
   // Recherche par commune avec mise à jour instantanée (setState)
   void _filtrerParCommune(String query) {
     setState(() {
       _menagesFiltres = _menages
-          .where((m) => m.commune.toLowerCase().contains(query.toLowerCase()))
+          .where((m) => _normaliser(m.commune).contains(_normaliser(query)))
           .toList();
       if (_triParPersonnes) {
         _menagesFiltres.sort((a, b) => a.nbPersonnes.compareTo(b.nbPersonnes));
