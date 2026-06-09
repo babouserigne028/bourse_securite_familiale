@@ -125,13 +125,19 @@ class AProposScreen extends StatelessWidget {
               child: Column(
                 children: [
                   _ligneAvecIcone(Icons.storage, 'Source',
-                      'À REMPLIR — PNBSF / collecte terrain'),
+                      'DGPSN — Présentation PNBSF/UNICEF'),
+                  const SizedBox(height: 12),
+                  _ligneAvecIcone(Icons.account_balance, 'Organisme',
+                      'DGPSN — Protection Sociale\net Solidarité Nationale'),
                   const SizedBox(height: 12),
                   _ligneAvecIcone(
                       Icons.location_on, 'Région', 'Thiès, Sénégal'),
                   const SizedBox(height: 12),
+                  _ligneAvecIcone(Icons.calendar_today, 'Période du programme',
+                      '2013 — 2017'),
+                  const SizedBox(height: 12),
                   _ligneAvecIcone(Icons.calendar_today, 'Date de collecte',
-                      'À REMPLIR — Juin 2026'),
+                      'Juin 2026'),
                 ],
               ),
             ),
@@ -181,7 +187,8 @@ class AProposScreen extends StatelessWidget {
       children: [
         Icon(icon, color: const Color(0xFF0D631B), size: 22),
         const SizedBox(width: 12),
-        Column(
+        Expanded(
+          child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(label,
@@ -193,6 +200,7 @@ class AProposScreen extends StatelessWidget {
                     fontSize: 15,
                     color: Color(0xFF171D14))),
           ],
+        ),
         ),
       ],
     );
