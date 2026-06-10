@@ -115,6 +115,7 @@ class AProposScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
 
+            // Source 1 — DGPSN
             Container(
               decoration: BoxDecoration(
                 color: const Color(0xFFEFF6E7),
@@ -124,18 +125,70 @@ class AProposScreen extends StatelessWidget {
               ),
               padding: const EdgeInsets.all(16),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _ligneAvecIcone(Icons.storage, 'Source',
-                      'DGPSN — Présentation PNBSF/UNICEF'),
-                  const SizedBox(height: 12),
-                  _ligneAvecIcone(Icons.account_balance, 'Organisme',
-                      'DGPSN — Protection Sociale\net Solidarité Nationale'),
+                  const Text('Source 1',
+                      style: TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFF0D631B))),
+                  const SizedBox(height: 8),
+                  _ligneAvecIcone(
+                      Icons.description,
+                      'Document',
+                      'Présentation du PNBSF et du Partenariat\nUNICEF — DGPSN'),
                   const SizedBox(height: 12),
                   _ligneAvecIcone(
-                      Icons.location_on, 'Région', 'Thiès, Sénégal'),
+                      Icons.account_balance,
+                      'Organisme',
+                      'DGPSN — Délégation Générale à la\nProtection Sociale et à la Solidarité Nationale'),
                   const SizedBox(height: 12),
-                  _ligneAvecIcone(Icons.calendar_today, 'Période du programme',
-                      '2013 — 2017'),
+                  _ligneAvecIcone(
+                      Icons.people,
+                      'Programme',
+                      'PNBSF — 316 841 ménages bénéficiaires\n25 000 FCFA/trimestre (allocation fixe)'),
+                  const SizedBox(height: 12),
+                  _ligneAvecIcone(Icons.calendar_today, 'Période',
+                      'Phase pilote : 2013 (50 000 ménages)\nGénéralisation : 2014 — 2017'),
+                ],
+              ),
+            ),
+            const SizedBox(height: 16),
+            // Source 2 — Banque mondiale
+            Container(
+              decoration: BoxDecoration(
+                color: const Color(0xFFEFF6E7),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                    color: const Color(0xFFBFCABA).withValues(alpha: 0.3)),
+              ),
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text('Source 2',
+                      style: TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFF0D631B))),
+                  const SizedBox(height: 8),
+                  _ligneAvecIcone(
+                      Icons.description,
+                      'Document',
+                      'Rapport d\'Evaluation d\'Impact du PNBSF\nBanque mondiale — Juillet 2023'),
+                  const SizedBox(height: 12),
+                  _ligneAvecIcone(
+                      Icons.bar_chart,
+                      'Caractéristiques réelles des ménages',
+                      'Taille moyenne : 10 personnes\n'
+                      '86% en situation de pauvreté standard\n'
+                      '65% des récipiendaires sont des femmes\n'
+                      'Dépenses moy. : 130 640 FCFA/mois'),
+                  const SizedBox(height: 12),
+                  _ligneAvecIcone(
+                      Icons.location_on,
+                      'Région',
+                      'Thiès, Sénégal\n(Thiès-Nord, Thiès-Est,\nMbour, Tivaouane, Khombole)'),
                   const SizedBox(height: 12),
                   _ligneAvecIcone(Icons.calendar_today, 'Date de collecte',
                       'Juin 2026'),
